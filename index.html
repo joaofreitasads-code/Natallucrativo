@@ -16,17 +16,23 @@
     <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
     <!-- Preload & Prefetch Critical Images -->
     <link rel="preload" as="image" href="/images/hero-banner-new.webp" type="image/webp" fetchpriority="high" />
+    <link rel="prefetch" href="/images/app-acervo-digital.webp" as="image" type="image/webp" />
     <link rel="prefetch" href="/images/vip-pack-offer.webp" as="image" type="image/webp" />
-    <link rel="prefetch" href="/images/comparacao-tabela.webp" as="image" type="image/webp" />
     <link rel="prefetch" href="/images/garantia-14-dias.webp" as="image" type="image/webp" />
-    <!-- DNS preconnects for maximum network speed -->
+    <!-- High-speed checkout & font preconnects -->
+    <link rel="preconnect" href="https://appdigitalhub.com.br" crossorigin />
     <link rel="dns-prefetch" href="https://appdigitalhub.com.br" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://trackeamento-vip.vercel.app" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" />
-    <!-- Tracking Script -->
-    <script async src="https://trackeamento-vip.vercel.app/t.js" data-pixels="1418656800256152"></script>
+    <!-- Optimized Non-blocking Font Loading -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" />
+    </noscript>
+    <!-- Tracking Script (defer to not block rendering) -->
+    <script defer src="https://trackeamento-vip.vercel.app/t.js" data-pixels="1418656800256152"></script>
   </head>
   <body class="bg-background text-foreground antialiased selection:bg-gold/30 selection:text-pine">
     <div id="root"></div>

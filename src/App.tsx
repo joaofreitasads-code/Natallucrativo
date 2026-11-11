@@ -20,6 +20,10 @@ import {
   Heart,
   XCircle,
   ZoomIn,
+  Smartphone,
+  Search,
+  Download,
+  CheckCircle2,
 } from 'lucide-react';
 
 export default function App() {
@@ -338,15 +342,433 @@ export default function App() {
         </div>
       </section>
 
-      {/* "O que você recebe" Section */}
-      <section className="bg-secondary/60 py-10 md:py-16 border-y border-border/40">
-        <div className="mx-auto max-w-5xl px-5">
-          <div className="text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">O que você recebe</p>
-            <h2 className="mt-2 text-3xl font-extrabold text-pine md:text-4xl">Tudo do seu kit digital</h2>
+      {/* SESSÃO DE BÔNUS EXCLUSIVOS */}
+      <section className="bg-pine-grad py-12 md:py-20 text-cream relative overflow-hidden border-y border-gold/30 content-auto">
+        {/* Subtle decorative glow */}
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="inline-flex items-center gap-2 rounded-full border border-gold/50 bg-gold/15 px-4 py-1.5 text-xs font-extrabold uppercase tracking-wider text-gold shadow-sm">
+              <Sparkles className="h-4 w-4 fill-current" />
+              Presentes Exclusivos Para Você
+            </span>
+
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-cream leading-tight">
+              Garantindo Hoje, Você Leva <span className="text-gold">Esses 4 Super Bônus</span> Totalmente Grátis!
+            </h2>
+
+            <p className="mt-3 text-sm sm:text-base text-cream/80 max-w-2xl mx-auto leading-relaxed">
+              Desenvolvemos materiais complementares práticos para você não ter nenhuma dúvida na montagem, saber exatamente quais materiais usar e vender suas peças com lucro certo neste Natal.
+            </p>
           </div>
 
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 md:mt-10">
+          {/* Grid dos Bônus (2x2) */}
+          <div className="mt-10 grid gap-8 md:grid-cols-2 items-stretch">
+            {/* Card Bônus 01 */}
+            <div className="flex flex-col rounded-[2.5rem] border-2 border-gold/40 bg-card/95 text-foreground p-6 sm:p-8 shadow-2xl backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-gold">
+              <div className="flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary uppercase">
+                  <Star className="h-3.5 w-3.5 fill-current text-primary" /> Bônus 01
+                </span>
+                <span className="rounded-full bg-success/15 px-3 py-1 text-xs font-extrabold text-success uppercase">
+                  100% Gratuito Hoje
+                </span>
+              </div>
+
+              {/* Imagem do Bônus 01 */}
+              <div
+                className="group/bonus relative mt-5 overflow-hidden rounded-2xl bg-pine/5 p-2 cursor-pointer border border-border/60 transition hover:shadow-md"
+                onClick={() => setPreviewImage('/images/bonus-1-montagem.webp')}
+                title="Clique para ampliar o Bônus 01"
+              >
+                <img
+                  src="/images/bonus-1-montagem.webp"
+                  alt="Bônus 01 - Guia de Montagem Perfeita"
+                  width="720"
+                  height="788"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto max-h-[340px] object-contain mx-auto transition duration-300 group-hover/bonus:scale-105 drop-shadow-md"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover/bonus:opacity-100 rounded-2xl">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-pine shadow-md">
+                    <ZoomIn className="h-4 w-4" /> Ampliar bônus
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-display text-2xl font-extrabold text-pine">
+                    Guia de Montagem Perfeita
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    Aprenda o passo a passo completo para imprimir, recortar, dobrar e montar suas lembrancinhas de Natal com acabamento profissional impecável — mesmo se você for iniciante!
+                  </p>
+
+                  <ul className="mt-4 space-y-2 text-sm text-foreground/90">
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Passo a passo detalhado:</strong> imprimir, recortar, dobrar e montar sem erros.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Dicas de papéis e colas:</strong> saiba qual papel usar para peças firmes e resistentes.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Funciona na tesoura ou máquina:</strong> faça tudo manualmente com facilidade.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs text-muted-foreground">Vendido separadamente por:</p>
+                    <p className="text-sm font-bold text-muted-foreground line-through">R$ 47,00</p>
+                  </div>
+                  <span className="rounded-xl bg-gold-grad px-3.5 py-1.5 text-sm font-extrabold text-gold-foreground uppercase shadow-sm">
+                    Grátis no seu kit
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Card Bônus 02 */}
+            <div className="flex flex-col rounded-[2.5rem] border-2 border-gold/40 bg-card/95 text-foreground p-6 sm:p-8 shadow-2xl backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-gold">
+              <div className="flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary uppercase">
+                  <Star className="h-3.5 w-3.5 fill-current text-primary" /> Bônus 02
+                </span>
+                <span className="rounded-full bg-success/15 px-3 py-1 text-xs font-extrabold text-success uppercase">
+                  100% Gratuito Hoje
+                </span>
+              </div>
+
+              {/* Imagem do Bônus 02 */}
+              <div
+                className="group/bonus relative mt-5 overflow-hidden rounded-2xl bg-pine/5 p-2 cursor-pointer border border-border/60 transition hover:shadow-md"
+                onClick={() => setPreviewImage('/images/bonus-2-precificacao.webp')}
+                title="Clique para ampliar o Bônus 02"
+              >
+                <img
+                  src="/images/bonus-2-precificacao.webp"
+                  alt="Bônus 02 - Tabela de Precificação Natalina"
+                  width="720"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto max-h-[340px] object-contain mx-auto transition duration-300 group-hover/bonus:scale-105 drop-shadow-md rounded-xl"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover/bonus:opacity-100 rounded-2xl">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-pine shadow-md">
+                    <ZoomIn className="h-4 w-4" /> Ampliar bônus
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-display text-2xl font-extrabold text-pine">
+                    Tabela de Precificação Natalina
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    Planilha prática e automatizada para calcular seus custos exatos (papel, impressão, embalagem) e definir o preço de venda ideal com lucro garantido!
+                  </p>
+
+                  <ul className="mt-4 space-y-2 text-sm text-foreground/90">
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Cálculo automático de custos:</strong> saiba exatamente quanto custa cada caixinha.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Margem de lucro certa:</strong> defina sua porcentagem de lucro sem medo de cobrar pouco.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Preço sugerido pronto:</strong> veja na hora o valor final ideal para vender e lucrar.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs text-muted-foreground">Vendido separadamente por:</p>
+                    <p className="text-sm font-bold text-muted-foreground line-through">R$ 37,00</p>
+                  </div>
+                  <span className="rounded-xl bg-gold-grad px-3.5 py-1.5 text-sm font-extrabold text-gold-foreground uppercase shadow-sm">
+                    Grátis no seu kit
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Card Bônus 03 */}
+            <div className="flex flex-col rounded-[2.5rem] border-2 border-gold/40 bg-card/95 text-foreground p-6 sm:p-8 shadow-2xl backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-gold">
+              <div className="flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary uppercase">
+                  <Star className="h-3.5 w-3.5 fill-current text-primary" /> Bônus 03
+                </span>
+                <span className="rounded-full bg-success/15 px-3 py-1 text-xs font-extrabold text-success uppercase">
+                  100% Gratuito Hoje
+                </span>
+              </div>
+
+              {/* Imagem do Bônus 03 */}
+              <div
+                className="group/bonus relative mt-5 overflow-hidden rounded-2xl bg-pine/5 p-2 cursor-pointer border border-border/60 transition hover:shadow-md"
+                onClick={() => setPreviewImage('/images/bonus-3-materiais.webp')}
+                title="Clique para ampliar o Bônus 03"
+              >
+                <img
+                  src="/images/bonus-3-materiais.webp"
+                  alt="Bônus 03 - Guia de Papéis e Materiais"
+                  width="720"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto max-h-[340px] object-contain mx-auto transition duration-300 group-hover/bonus:scale-105 drop-shadow-md rounded-xl"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover/bonus:opacity-100 rounded-2xl">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-pine shadow-md">
+                    <ZoomIn className="h-4 w-4" /> Ampliar bônus
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-display text-2xl font-extrabold text-pine">
+                    Guia de Papéis e Materiais
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    Descubra quais papéis, gramaturas, colas e ferramentas utilizar para ter um acabamento profissional impecável, sem desperdiçar material!
+                  </p>
+
+                  <ul className="mt-4 space-y-2 text-sm text-foreground/90">
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Tipos de papéis recomendados:</strong> fotográfico matte, offset e kraft com exemplos práticos.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Gramaturas ideais:</strong> nunca mais erre na firmeza e sustentação das caixas.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Colas e ferramentas essenciais:</strong> dicas de colagem rápida sem enrugar ou manchar o papel.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs text-muted-foreground">Vendido separadamente por:</p>
+                    <p className="text-sm font-bold text-muted-foreground line-through">R$ 27,00</p>
+                  </div>
+                  <span className="rounded-xl bg-gold-grad px-3.5 py-1.5 text-sm font-extrabold text-gold-foreground uppercase shadow-sm">
+                    Grátis no seu kit
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Card Bônus 04 */}
+            <div className="flex flex-col rounded-[2.5rem] border-2 border-gold/40 bg-card/95 text-foreground p-6 sm:p-8 shadow-2xl backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-gold">
+              <div className="flex items-center justify-between gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3.5 py-1 text-xs font-bold text-primary uppercase">
+                  <Star className="h-3.5 w-3.5 fill-current text-primary" /> Bônus 04
+                </span>
+                <span className="rounded-full bg-success/15 px-3 py-1 text-xs font-extrabold text-success uppercase">
+                  100% Gratuito Hoje
+                </span>
+              </div>
+
+              {/* Imagem do Bônus 04 */}
+              <div
+                className="group/bonus relative mt-5 overflow-hidden rounded-2xl bg-pine/5 p-2 cursor-pointer border border-border/60 transition hover:shadow-md"
+                onClick={() => setPreviewImage('/images/bonus-4-vendas.webp')}
+                title="Clique para ampliar o Bônus 04"
+              >
+                <img
+                  src="/images/bonus-4-vendas.webp"
+                  alt="Bônus 04 - Mini Guia para Vender no Natal"
+                  width="720"
+                  height="720"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-auto max-h-[340px] object-contain mx-auto transition duration-300 group-hover/bonus:scale-105 drop-shadow-md rounded-xl"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover/bonus:opacity-100 rounded-2xl">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-pine shadow-md">
+                    <ZoomIn className="h-4 w-4" /> Ampliar bônus
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="font-display text-2xl font-extrabold text-pine">
+                    Mini Guia para Vender no Natal
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    Estratégias simples e práticas para divulgar, atrair clientes e conquistar encomendas de lembrancinhas natalinas em tempo recorde!
+                  </p>
+
+                  <ul className="mt-4 space-y-2 text-sm text-foreground/90">
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Divulgação no WhatsApp:</strong> mensagens e roteiros prontos para disparar e fechar vendas.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Dicas para Instagram &amp; Grupos:</strong> como tirar fotos atraentes e divulgar em grupos locais.</span>
+                    </li>
+                    <li className="flex items-start gap-2.5">
+                      <Check className="h-4 w-4 shrink-0 text-success mt-0.5" />
+                      <span><strong>Ideias de promoções:</strong> crie combos irresistíveis que aumentam o valor de cada pedido.</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between">
+                  <div>
+                    <p className="text-xs text-muted-foreground">Vendido separadamente por:</p>
+                    <p className="text-sm font-bold text-muted-foreground line-through">R$ 47,00</p>
+                  </div>
+                  <span className="rounded-xl bg-gold-grad px-3.5 py-1.5 text-sm font-extrabold text-gold-foreground uppercase shadow-sm">
+                    Grátis no seu kit
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Banner Resumo de Valor + CTA */}
+          <div className="mt-12 rounded-3xl border border-gold/40 bg-black/25 p-6 text-center backdrop-blur-sm sm:p-8">
+            <p className="text-xs font-bold uppercase tracking-widest text-gold">Economia exclusiva de Natal</p>
+            <p className="mt-1 text-lg sm:text-2xl font-extrabold text-cream">
+              Mais de <span className="text-gold">R$ 158,00 em bônus</span> entregues no seu e-mail por <span className="underline decoration-gold">R$ 0,00</span>
+            </p>
+            <p className="mt-2 text-xs sm:text-sm text-cream/75 max-w-xl mx-auto">
+              Garanta seu acesso antes que essa condição especial seja encerrada.
+            </p>
+            <div className="mt-6 max-w-md mx-auto">
+              <a
+                href="#planos"
+                onClick={scrollToPlans}
+                className="group flex w-full items-center justify-center gap-2 rounded-full bg-gold-grad px-6 py-4 text-center font-display text-base sm:text-lg font-extrabold uppercase text-gold-foreground shadow-gold transition hover:brightness-105 animate-pulse-soft"
+              >
+                Garantir moldes + 4 bônus grátis
+                <ChevronRight className="h-5 w-5 transition group-hover:translate-x-1" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* "O que você recebe" Section com Aplicativo Exclusivo */}
+      <section className="bg-gradient-to-b from-secondary/40 via-card to-secondary/60 py-12 md:py-20 border-y border-border/40 relative overflow-hidden">
+        {/* Glow de fundo */}
+        <div className="pointer-events-none absolute left-1/2 top-10 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+
+        <div className="relative mx-auto max-w-5xl px-5">
+          <div className="text-center max-w-3xl mx-auto">
+            <span className="inline-flex items-center gap-2 rounded-full bg-emerald-500/10 border border-emerald-500/25 px-4 py-1.5 text-xs font-extrabold uppercase tracking-widest text-emerald-700 shadow-sm">
+              <Smartphone className="h-4 w-4 text-emerald-600 animate-pulse" />
+              Aplicativo Exclusivo Incluso
+            </span>
+            <p className="mt-4 text-xs font-bold uppercase tracking-[0.2em] text-primary">O que você recebe</p>
+            <h2 className="mt-1 text-3xl font-extrabold text-pine md:text-5xl font-display leading-tight">
+              Tudo do seu kit digital dentro de um <span className="text-primary underline decoration-gold/60 decoration-wavy">Aplicativo Exclusivo</span>
+            </h2>
+            <p className="mt-3 text-base sm:text-lg text-muted-foreground leading-relaxed">
+              Você não vai receber links perdidos de drive ou pastas bagunçadas. Tenha acesso à nossa <strong className="text-pine font-bold">plataforma com visual de aplicativo</strong> organizada por categorias, com busca instantânea e download com 1 clique pelo celular ou computador.
+            </p>
+          </div>
+
+          {/* Destaque do Mockup do Aplicativo */}
+          <div className="mt-8 md:mt-12">
+            <div className="relative rounded-3xl p-2 sm:p-3 bg-gradient-to-br from-gold/30 via-pine/10 to-primary/20 shadow-2xl border border-gold/40">
+              <div className="relative overflow-hidden rounded-2xl bg-card border border-border/40 group">
+                <div className="relative aspect-[16/9] w-full bg-muted/40 cursor-pointer overflow-hidden"
+                     onClick={() => setPreviewImage('/images/app-acervo-digital.webp')}>
+                  <img
+                    src="/images/app-acervo-digital.webp"
+                    alt="Aplicativo Exclusivo Acervo Natalino Digital - Catálogo e Download de Moldes"
+                    loading="lazy"
+                    decoding="async"
+                    width={960}
+                    height={540}
+                    className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.02]"
+                  />
+                  {/* Overlay interativo com aviso para ampliar */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-pine/80 via-transparent to-transparent opacity-90 transition sm:opacity-0 sm:group-hover:opacity-90 flex items-end p-4 sm:p-6">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full gap-2 text-white">
+                      <div>
+                        <p className="text-sm sm:text-base font-bold flex items-center gap-2">
+                          <Sparkles className="h-4 w-4 text-gold" />
+                          Plataforma Acervo Natalino Digital
+                        </p>
+                        <p className="text-xs text-white/80">Busca rápida, vitrine com fotos reais e botão direto de baixar</p>
+                      </div>
+                      <span className="inline-flex items-center gap-1.5 self-start sm:self-auto rounded-full bg-white/20 backdrop-blur-md px-3 py-1.5 text-xs font-bold text-white border border-white/30">
+                        <Search className="h-3.5 w-3.5" /> Clique para ampliar tela
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Benefícios exclusivos do aplicativo */}
+            <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              <div className="flex items-center gap-2.5 rounded-2xl bg-card p-3.5 border border-border/50 shadow-soft">
+                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                  <Search className="h-4 w-4" />
+                </div>
+                <div>
+                  <p className="text-xs font-extrabold text-pine">Busca Inteligente</p>
+                  <p className="text-[11px] text-muted-foreground leading-tight">Ache o molde em segundos</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 rounded-2xl bg-card p-3.5 border border-border/50 shadow-soft">
+                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-emerald-500/10 text-emerald-600">
+                  <Download className="h-4 w-4" />
+                </div>
+                <div>
+                  <p className="text-xs font-extrabold text-pine">1 Clique p/ Baixar</p>
+                  <p className="text-[11px] text-muted-foreground leading-tight">Arquivos diretos sem travar</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 rounded-2xl bg-card p-3.5 border border-border/50 shadow-soft">
+                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gold/20 text-gold-dark">
+                  <Smartphone className="h-4 w-4" />
+                </div>
+                <div>
+                  <p className="text-xs font-extrabold text-pine">Celular ou PC</p>
+                  <p className="text-[11px] text-muted-foreground leading-tight">Acesse de onde quiser</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 rounded-2xl bg-card p-3.5 border border-border/50 shadow-soft">
+                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-secondary text-primary">
+                  <CheckCircle2 className="h-4 w-4" />
+                </div>
+                <div>
+                  <p className="text-xs font-extrabold text-pine">Atualizações Grátis</p>
+                  <p className="text-[11px] text-muted-foreground leading-tight">Novos moldes direto no app</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Cards com as categorias de moldes */}
+          <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="flex items-start gap-4 rounded-3xl bg-card p-5 shadow-soft transition hover:-translate-y-1 border border-border/40">
               <div className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-accent text-3xl">
                 🎁
@@ -358,7 +780,7 @@ export default function App() {
                     Econômico
                   </span>
                 </div>
-                <p className="mt-1 text-sm text-muted-foreground">Caixas milk, pirâmides e sacolinhas.</p>
+                <p className="mt-1 text-sm text-muted-foreground">Caixas milk, pirâmides, sacolinhas e caixas presenteáveis prontas para cortar.</p>
               </div>
             </div>
 
@@ -370,10 +792,10 @@ export default function App() {
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="text-lg font-bold text-pine">Porta-Doces</h3>
                   <span className="rounded-full bg-pine/10 px-2.5 py-0.5 text-xs font-bold text-pine">
-                    Mais vende
+                    Mais vendido
                   </span>
                 </div>
-                <p className="mt-1 text-sm text-muted-foreground">Porta-bombom, porta-moeda e mimos.</p>
+                <p className="mt-1 text-sm text-muted-foreground">Porta-bombom, porta-moeda, suportes para brigadeiro e mimos de alta procura.</p>
               </div>
             </div>
 
@@ -385,10 +807,10 @@ export default function App() {
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="text-lg font-bold text-pine">Nicho Escolar</h3>
                   <span className="rounded-full bg-pine/10 px-2.5 py-0.5 text-xs font-bold text-pine">
-                    Rápido
+                    Produção rápida
                   </span>
                 </div>
-                <p className="mt-1 text-sm text-muted-foreground">Porta-lápis, cards e lembrancinhas em lote.</p>
+                <p className="mt-1 text-sm text-muted-foreground">Porta-lápis, cards de Natal, tags para alunos e lembrancinhas para fazer em lote.</p>
               </div>
             </div>
 
@@ -399,27 +821,27 @@ export default function App() {
               <div>
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="text-lg font-bold text-pine">Área Exclusiva VIP</h3>
-                  <span className="rounded-full bg-pine/10 px-2.5 py-0.5 text-xs font-bold text-pine">
-                    Exclusivo
+                  <span className="rounded-full bg-gold/20 text-gold-dark px-2.5 py-0.5 text-xs font-bold">
+                    Super Completo
                   </span>
                 </div>
-                <p className="mt-1 text-sm text-muted-foreground">Moldes e stands que só quem é VIP recebe.</p>
+                <p className="mt-1 text-sm text-muted-foreground">Todos os moldes premium, stands natalinos, bônus especiais e novos lançamentos.</p>
               </div>
             </div>
           </div>
 
           <div className="mt-6 grid grid-cols-2 gap-3 rounded-3xl bg-card p-5 text-sm font-bold shadow-soft md:grid-cols-4 border border-border/40">
             <span className="flex items-center justify-center gap-2 text-pine">
-              <Scissors className="h-4 w-4 text-pine" /> Corte fácil
+              <Scissors className="h-4 w-4 text-pine" /> Corte na tesoura ou plotter
             </span>
             <span className="flex items-center justify-center gap-2 text-pine">
-              <FileText className="h-4 w-4 text-pine" /> Formato A4
+              <FileText className="h-4 w-4 text-pine" /> Formato A4 pronto p/ imprimir
             </span>
             <span className="flex items-center justify-center gap-2 text-pine">
-              <Zap className="h-4 w-4 text-pine" /> Acesso imediato
+              <Smartphone className="h-4 w-4 text-emerald-600" /> Acesso direto no App
             </span>
             <span className="flex items-center justify-center gap-2 text-pine">
-              <Briefcase className="h-4 w-4 text-pine" /> Licença comercial
+              <Briefcase className="h-4 w-4 text-pine" /> Licença comercial inclusa
             </span>
           </div>
         </div>
@@ -560,9 +982,9 @@ export default function App() {
                 +600 moldes e arquivos natalinos
               </p>
 
-              {/* Imagem da Oferta VIP R$ 29,90 */}
+              {/* Imagem da Oferta VIP R$ 29,90 - Sem plano de fundo */}
               <div
-                className="group/vip-img relative mt-4 overflow-hidden rounded-2xl border border-gold/50 shadow-soft cursor-pointer bg-black/20"
+                className="group/vip-img relative mt-4 cursor-pointer"
                 onClick={() => setPreviewImage('/images/vip-pack-offer.webp')}
                 title="Clique para ampliar o mockup do Pack VIP"
               >
@@ -571,12 +993,12 @@ export default function App() {
                   alt="Pack VIP Moldes de Natal - Oferta R$ 29,90"
                   width="760"
                   height="507"
-                  className="w-full h-auto object-cover transition duration-300 group-hover/vip-img:scale-105"
+                  className="w-full h-auto object-contain transition duration-300 group-hover/vip-img:scale-105 drop-shadow-md"
                   loading="lazy"
                   decoding="async"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover/vip-img:opacity-100">
-                  <span className="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-xs font-bold text-pine shadow">
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 transition group-hover/vip-img:opacity-100">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-white/95 px-2.5 py-1 text-xs font-bold text-pine shadow-md">
                     <ZoomIn className="h-3.5 w-3.5" /> Ampliar imagem
                   </span>
                 </div>
@@ -645,25 +1067,121 @@ export default function App() {
             </div>
           </div>
 
-          {/* Imagem de Comparação dos Planos */}
-          <div
-            className="group/comp relative mt-10 overflow-hidden rounded-[2rem] border-2 border-gold/40 bg-card shadow-soft md:mt-14 cursor-pointer transition hover:shadow-lg"
-            onClick={() => setPreviewImage('/images/comparacao-tabela.webp')}
-            title="Clique para ampliar a comparação dos planos"
-          >
-            <img
-              src="/images/comparacao-tabela.webp"
-              alt="Comparação rápida dos planos"
-              width="800"
-              height="533"
-              className="w-full h-auto object-cover transition duration-300 group-hover/comp:scale-[1.01]"
-              loading="lazy"
-              decoding="async"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover/comp:opacity-100">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-bold text-pine shadow-md">
-                <ZoomIn className="h-4 w-4" /> Ampliar comparação
+          {/* Tabela de Comparação dos Planos */}
+          <div className="mt-12 rounded-[2.5rem] border-2 border-gold/40 bg-card p-4 sm:p-8 shadow-soft md:mt-16">
+            <div className="text-center mb-6 sm:mb-8">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/15 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-pine">
+                <Sparkles className="h-3.5 w-3.5 text-gold fill-current" /> Comparação Detalhada
               </span>
+              <h3 className="mt-2 font-display text-2xl sm:text-3xl font-extrabold text-pine">
+                Qual o plano ideal para você?
+              </h3>
+              <p className="mt-1 text-xs sm:text-sm text-muted-foreground">
+                Compare lado a lado todos os recursos incluídos em cada plano
+              </p>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[560px] text-left border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-border/70 text-xs sm:text-sm">
+                    <th className="py-4 px-3 sm:px-4 font-bold text-pine uppercase tracking-wider w-[42%]">
+                      Benefícios inclusos
+                    </th>
+                    <th className="py-4 px-3 sm:px-4 text-center font-bold text-pine w-[29%]">
+                      <span className="block text-base sm:text-lg">Básico</span>
+                      <span className="font-mono text-xs text-muted-foreground font-normal">R$ 10,90</span>
+                    </th>
+                    <th className="py-4 px-3 sm:px-4 text-center font-extrabold text-white bg-red-700 rounded-t-2xl shadow-sm w-[29%] border-x-2 border-t-2 border-gold">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase text-gold bg-black/30 px-2 py-0.5 rounded-full mb-1">
+                        <Star className="h-3 w-3 fill-current" /> Mais Escolhido
+                      </span>
+                      <span className="block text-base sm:text-lg">VIP Completo</span>
+                      <span className="font-mono text-xs text-gold font-bold">R$ 29,90</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-xs sm:text-sm divide-y divide-border/40">
+                  <tr className="hover:bg-muted/40 transition">
+                    <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Quantidade total de moldes</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center text-muted-foreground font-medium">+100 moldes</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center font-bold text-red-700 bg-red-50/50 border-x-2 border-gold/40">
+                      +600 moldes (6x mais!)
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-muted/40 transition">
+                    <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Formatos em alta resolução (PDF e PNG A4)</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center">
+                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-success mx-auto" />
+                    </td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center bg-red-50/50 border-x-2 border-gold/40">
+                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-red-700 mx-auto" />
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-muted/40 transition">
+                    <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Caixas para presentes e lembrancinhas</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center text-muted-foreground">Modelos básicos</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center font-semibold text-pine bg-red-50/50 border-x-2 border-gold/40">
+                      Coleção Completa (+50 modelos)
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-muted/40 transition">
+                    <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Porta-doces, bombons e mimos natalinos</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center text-muted-foreground">Essenciais</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center font-semibold text-pine bg-red-50/50 border-x-2 border-gold/40">
+                      Todos os modelos
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-muted/40 transition">
+                    <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Adesivos e tags decorativas de Natal</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center text-muted-foreground/60">
+                      <X className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground/40 mx-auto" />
+                    </td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center bg-red-50/50 border-x-2 border-gold/40">
+                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-red-700 mx-auto" />
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-muted/40 transition">
+                    <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Cartões e envelopes temáticos prontos</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center text-muted-foreground/60">
+                      <X className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground/40 mx-auto" />
+                    </td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center bg-red-50/50 border-x-2 border-gold/40">
+                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-red-700 mx-auto" />
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-muted/40 transition">
+                    <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Área VIP com stands e displays exclusivos</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center text-muted-foreground/60">
+                      <X className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground/40 mx-auto" />
+                    </td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center bg-red-50/50 border-x-2 border-gold/40">
+                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-red-700 mx-auto" />
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-muted/40 transition">
+                    <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Os 4 Super Bônus Exclusivos (R$ 158 em presentes)</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center">
+                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-success mx-auto" />
+                    </td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center bg-red-50/50 border-x-2 border-gold/40">
+                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-red-700 mx-auto" />
+                    </td>
+                  </tr>
+                  <tr className="hover:bg-muted/40 transition">
+                    <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Licença comercial para vender as peças físicas</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center font-medium text-success">Vitalícia</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center font-bold text-red-700 bg-red-50/50 border-x-2 border-gold/40">Vitalícia</td>
+                  </tr>
+                  <tr className="hover:bg-muted/40 transition">
+                    <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Garantia incondicional total</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center font-medium text-pine">14 dias</td>
+                    <td className="py-3.5 px-3 sm:px-4 text-center font-bold text-red-700 bg-red-50/50 border-x-2 border-b-2 border-gold/40 rounded-b-2xl">
+                      14 dias
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -892,16 +1410,6 @@ export default function App() {
           </div>
         </div>
       )}
-
-      {/* Botão Flutuante de Oferta Especial */}
-      <button
-        onClick={() => setShowUpsellModal(true)}
-        className="fixed bottom-4 left-4 z-40 hidden sm:flex items-center gap-2 rounded-full bg-gold-grad px-4 py-2.5 text-xs font-extrabold uppercase text-gold-foreground shadow-gold transition hover:scale-105 animate-pulse-soft cursor-pointer"
-        title="Abrir oferta especial do Plano Completo por R$ 18,90"
-      >
-        <Sparkles className="h-4 w-4 fill-current" />
-        <span>Plano Completo por R$ 18,90</span>
-      </button>
     </div>
   );
 }
