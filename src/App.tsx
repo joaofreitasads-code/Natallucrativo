@@ -636,7 +636,7 @@ export default function App() {
               </ul>
 
               <a
-                href="https://pay.cakto.com.br/37rh2uu_1214451?utm_source=organic&utm_campaign=&utm_medium=&utm_content=&utm_term="
+                href="https://appdigitalhub.com.br/c/006495B4"
                 className="mt-8 block rounded-full bg-gold-grad py-5 text-center font-display text-lg font-extrabold uppercase text-gold-foreground shadow-gold transition hover:brightness-105 animate-pulse-soft"
               >
                 Quero o Plano Completo · R$ 29,90
@@ -874,7 +874,7 @@ export default function App() {
 
             {/* Botão de Ação Principal */}
             <a
-              href="https://pay.cakto.com.br/37rh2uu_1214451?utm_source=organic&cupom=COMPLETO18"
+              href="https://appdigitalhub.com.br/c/9B3097D2"
               className="mt-5 block w-full rounded-full bg-gold-grad py-4 text-center font-display text-base sm:text-lg font-extrabold uppercase text-gold-foreground shadow-gold transition hover:brightness-105 active:scale-98 animate-pulse-soft"
             >
               SIM! QUERO O PLANO COMPLETO POR R$ 18,90
@@ -883,7 +883,7 @@ export default function App() {
             {/* Link Secundário (Continuar no Básico por R$ 10,90) */}
             <div className="mt-3 text-center">
               <a
-                href="https://pay.cakto.com.br/c8ns2h9_1214900?utm_source=organic"
+                href="https://appdigitalhub.com.br/c/A326A052"
                 className="text-xs opacity-75 underline hover:opacity-100 text-cream transition"
               >
                 Não, quero apenas o Plano Básico por R$ 10,90 &rarr;
