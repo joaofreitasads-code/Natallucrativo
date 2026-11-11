@@ -1,0 +1,6 @@
+{
+  "name": "Moldes de Natal 2026",
+  "description": "Mais de 600 moldes de lembrancinhas natalinas em PDF e PNG A4 prontos para imprimir e vender.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
