@@ -1,5 +1,5 @@
 // High-performance Service Worker for instant image delivery on weak mobile devices
-const CACHE_NAME = 'natal-lucrativo-img-v5';
+const CACHE_NAME = 'natal-lucrativo-img-v6';
 const CRITICAL_IMAGES = [
   '/images/hero-banner-new.webp',
   '/images/app-acervo-digital.webp',
@@ -20,6 +20,17 @@ const CRITICAL_IMAGES = [
   '/images/moldes-8.webp',
   '/images/moldes-9.webp',
   '/images/moldes-10.webp',
+  '/images/moldes-11-caixa-envelope.webp',
+  '/images/moldes-12-caixas-diferenciadas.webp',
+  '/images/moldes-13-caixinha-bis.webp',
+  '/images/moldes-14-caixinhas-natalinas.webp',
+  '/images/moldes-15-card-blister.webp',
+  '/images/moldes-16-arvore-natal.webp',
+  '/images/moldes-17-caixinha-8x8.webp',
+  '/images/moldes-18-casinha-natalina.webp',
+  '/images/moldes-19-casinha-p2.webp',
+  '/images/moldes-20-casinha-p3.webp',
+  '/images/moldes-21-lacos-natal.webp',
   '/images/prova_social.webp',
   '/images/prova_social_2.webp',
   '/images/prova_social_3.webp',

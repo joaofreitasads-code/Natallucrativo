@@ -122,9 +122,16 @@ h1, h2, h3, h4, .font-display {
   will-change: transform;
 }
 
-/* Optimization for low-end mobile rendering */
+/* Optimization for ultra-fast GPU image rendering and scroll */
 .content-auto {
   content-visibility: auto;
   contain-intrinsic-size: 1px 700px;
+}
+
+img {
+  content-visibility: auto;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 

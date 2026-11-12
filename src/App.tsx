@@ -60,19 +60,6 @@ export default function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // Exit intent popup trigger
-  useEffect(() => {
-    let triggered = false;
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (e.clientY <= 10 && !triggered) {
-        triggered = true;
-        setShowUpsellModal(true);
-      }
-    };
-    document.addEventListener('mouseleave', handleMouseLeave);
-    return () => document.removeEventListener('mouseleave', handleMouseLeave);
-  }, []);
-
   // Timer for upsell popup
   useEffect(() => {
     if (!showUpsellModal) return;
@@ -99,6 +86,7 @@ export default function App() {
     }
   };
 
+  // Linha 1: 7 modelos únicos
   const galleryImages = [
     '/images/moldes-1.webp',
     '/images/moldes-2.webp',
@@ -107,22 +95,28 @@ export default function App() {
     '/images/moldes-5.webp',
     '/images/moldes-6.webp',
     '/images/moldes-7.webp',
-    '/images/moldes-8.webp',
-    '/images/moldes-9.webp',
-    '/images/moldes-10.webp',
   ];
 
+  // Linha 2: outros 7 modelos únicos
   const galleryImagesRow2 = [
-    '/images/moldes-6.webp',
-    '/images/moldes-7.webp',
     '/images/moldes-8.webp',
     '/images/moldes-9.webp',
     '/images/moldes-10.webp',
-    '/images/moldes-1.webp',
-    '/images/moldes-2.webp',
-    '/images/moldes-3.webp',
-    '/images/moldes-4.webp',
-    '/images/moldes-5.webp',
+    '/images/moldes-11-caixa-envelope.webp',
+    '/images/moldes-12-caixas-diferenciadas.webp',
+    '/images/moldes-13-caixinha-bis.webp',
+    '/images/moldes-22-papai-noel.webp',
+  ];
+
+  // Linha 3: 7 novos modelos exclusivos do Google Drive
+  const galleryImagesRow3 = [
+    '/images/moldes-15-card-blister.webp',
+    '/images/moldes-16-arvore-natal.webp',
+    '/images/moldes-17-caixinha-8x8.webp',
+    '/images/moldes-18-casinha-natalina.webp',
+    '/images/moldes-19-casinha-p2.webp',
+    '/images/moldes-20-casinha-p3.webp',
+    '/images/moldes-21-lacos-natal.webp',
   ];
 
   const testimonials = [
@@ -269,72 +263,80 @@ export default function App() {
         </div>
       </section>
 
-      {/* DUAS LINHAS DE CARROSSEL INFINITO LOGO APÓS A SESSÃO DO HERO */}
+      {/* TRÊS LINHAS DE CARROSSEL INFINITO COM MODELOS DO DRIVE (ZERO REPETIÇÃO) */}
       <section className="py-6 sm:py-10 overflow-hidden bg-background">
         <div className="text-center px-4 mb-5 sm:mb-8">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">Confira alguns modelos</p>
-          <h2 className="mt-1 text-2xl font-extrabold text-pine sm:text-3xl md:text-4xl">
+          <h2 className="mt-1 text-2xl font-extrabold text-pine sm:text-3xl md:text-4xl font-display">
             Veja alguns dos moldes do kit
           </h2>
           <p className="mt-1.5 text-xs sm:text-sm text-muted-foreground">
-            Passe o mouse para pausar · Clique em qualquer molde para ampliar
+            Passe o mouse para pausar e ver os detalhes dos moldes prontos para imprimir
           </p>
         </div>
 
         <div className="space-y-3 sm:space-y-4">
-          {/* Linha 1 de Carrossel Infinito (Sentido Esquerda) */}
+          {/* Linha 1 de Carrossel Infinito (7 modelos únicos - Sentido Esquerda) */}
           <div className="group flex w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
             <div className="flex w-max shrink-0 items-stretch gap-3 pr-3 animate-marquee sm:gap-4 sm:pr-4 group-hover:[animation-play-state:paused]">
               {[...galleryImages, ...galleryImages].map((img, idx) => (
                 <div
                   key={`carousel-row1-${idx}`}
-                  onClick={() => setPreviewImage(img)}
-                  className="group/card relative aspect-[4/5] w-36 shrink-0 cursor-pointer overflow-hidden rounded-2xl shadow-soft sm:w-52 sm:rounded-3xl md:w-64 border border-border/50 bg-card transition hover:-translate-y-1 hover:shadow-lg"
-                  title="Clique para ampliar"
+                  className="group/card relative aspect-[4/5] w-36 shrink-0 overflow-hidden rounded-2xl shadow-soft sm:w-52 sm:rounded-3xl md:w-64 border border-border/50 bg-card transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   <img
                     src={img}
-                    alt={`Molde de Natal modelo ${idx + 1}`}
+                    alt={`Molde de Natal modelo ${(idx % galleryImages.length) + 1}`}
                     loading="lazy"
                     decoding="async"
                     width="340"
                     height="425"
                     className="h-full w-full object-cover transition duration-300 group-hover/card:scale-105"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover/card:opacity-100">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-xs font-bold text-pine shadow">
-                      <ZoomIn className="h-3.5 w-3.5" /> Ampliar
-                    </span>
-                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Linha 2 de Carrossel Infinito (Sentido Direita / Inverso) */}
+          {/* Linha 2 de Carrossel Infinito (7 modelos únicos - Sentido Direita) */}
           <div className="group flex w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
             <div className="flex w-max shrink-0 items-stretch gap-3 pr-3 animate-marquee-reverse sm:gap-4 sm:pr-4 group-hover:[animation-play-state:paused]">
               {[...galleryImagesRow2, ...galleryImagesRow2].map((img, idx) => (
                 <div
                   key={`carousel-row2-${idx}`}
-                  onClick={() => setPreviewImage(img)}
-                  className="group/card relative aspect-[4/5] w-36 shrink-0 cursor-pointer overflow-hidden rounded-2xl shadow-soft sm:w-52 sm:rounded-3xl md:w-64 border border-border/50 bg-card transition hover:-translate-y-1 hover:shadow-lg"
-                  title="Clique para ampliar"
+                  className="group/card relative aspect-[4/5] w-36 shrink-0 overflow-hidden rounded-2xl shadow-soft sm:w-52 sm:rounded-3xl md:w-64 border border-border/50 bg-card transition hover:-translate-y-1 hover:shadow-lg"
                 >
                   <img
                     src={img}
-                    alt={`Molde de Natal modelo exclusivo ${idx + 1}`}
+                    alt={`Molde de Natal modelo exclusivo ${(idx % galleryImagesRow2.length) + 8}`}
                     loading="lazy"
                     decoding="async"
                     width="340"
                     height="425"
                     className="h-full w-full object-cover transition duration-300 group-hover/card:scale-105"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 transition group-hover/card:opacity-100">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-xs font-bold text-pine shadow">
-                      <ZoomIn className="h-3.5 w-3.5" /> Ampliar
-                    </span>
-                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Linha 3 de Carrossel Infinito (7 novos modelos do Google Drive - Sentido Esquerda Cadenciado) */}
+          <div className="group flex w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)]">
+            <div className="flex w-max shrink-0 items-stretch gap-3 pr-3 animate-marquee-slow sm:gap-4 sm:pr-4 group-hover:[animation-play-state:paused]">
+              {[...galleryImagesRow3, ...galleryImagesRow3].map((img, idx) => (
+                <div
+                  key={`carousel-row3-${idx}`}
+                  className="group/card relative aspect-[4/5] w-36 shrink-0 overflow-hidden rounded-2xl shadow-soft sm:w-52 sm:rounded-3xl md:w-64 border border-border/50 bg-card transition hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <img
+                    src={img}
+                    alt={`Molde de Natal modelo adicional ${(idx % galleryImagesRow3.length) + 15}`}
+                    loading="lazy"
+                    decoding="async"
+                    width="340"
+                    height="425"
+                    className="h-full w-full object-cover transition duration-300 group-hover/card:scale-105"
+                  />
                 </div>
               ))}
             </div>
@@ -951,11 +953,15 @@ export default function App() {
                 </li>
                 <li className="flex gap-3 text-sm sm:text-base">
                   <Check className="h-5 w-5 shrink-0 text-success" />
-                  <span>Arquivos prontos para imprimir</span>
+                  <span>Arquivos prontos para imprimir (PDF e PNG A4)</span>
                 </li>
                 <li className="flex gap-3 text-sm sm:text-base">
                   <Check className="h-5 w-5 shrink-0 text-success" />
                   <span>Acesso imediato ao material</span>
+                </li>
+                <li className="flex gap-3 text-sm sm:text-base opacity-75">
+                  <X className="h-5 w-5 shrink-0 text-muted-foreground/60" />
+                  <span className="text-muted-foreground line-through">Sem os 4 Super Bônus Exclusivos</span>
                 </li>
               </ul>
 
@@ -964,7 +970,7 @@ export default function App() {
                 onClick={() => setShowUpsellModal(true)}
                 className="mt-8 block w-full rounded-full bg-pine py-4 text-center text-base font-bold text-pine-foreground shadow-none transition hover:brightness-110 active:scale-98 cursor-pointer"
               >
-                Escolher Plano Básico · R$ 10,90
+                Escolher Plano Básico (Sem Bônus) · R$ 10,90
               </button>
             </div>
 
@@ -979,7 +985,7 @@ export default function App() {
 
               <h3 className="text-center text-2xl font-extrabold text-cream">Plano VIP</h3>
               <p className="mt-4 rounded-2xl border border-gold/40 bg-gold/15 py-3 text-center font-display text-lg font-bold uppercase text-gold">
-                +600 moldes e arquivos natalinos
+                +600 moldes + 4 Bônus Exclusivos
               </p>
 
               {/* Imagem da Oferta VIP R$ 29,90 - Sem plano de fundo */}
@@ -1005,7 +1011,7 @@ export default function App() {
               </div>
 
               <p className="mt-3 text-center text-sm opacity-90 text-cream">
-                Tudo do Básico + adesivos, cartões natalinos e área exclusiva de moldes e stands.
+                Tudo do Básico + adesivos, cartões, área exclusiva de stands e todos os 4 super bônus!
               </p>
 
               <div className="mt-5 text-center">
@@ -1033,7 +1039,7 @@ export default function App() {
                 </li>
                 <li className="flex gap-3 text-sm sm:text-base">
                   <Check className="h-5 w-5 shrink-0 text-gold" />
-                  <span>Tudo do Plano Básico</span>
+                  <span>Tudo do Plano Básico incluso</span>
                 </li>
                 <li className="flex gap-3 text-sm sm:text-base">
                   <Check className="h-5 w-5 shrink-0 text-gold" />
@@ -1041,19 +1047,38 @@ export default function App() {
                 </li>
                 <li className="flex gap-3 text-sm sm:text-base">
                   <Check className="h-5 w-5 shrink-0 text-gold" />
-                  <span>Adesivos natalinos</span>
+                  <span>Adesivos e cartões natalinos</span>
                 </li>
                 <li className="flex gap-3 text-sm sm:text-base">
                   <Check className="h-5 w-5 shrink-0 text-gold" />
-                  <span>Cartões natalinos</span>
+                  <span>Área Exclusiva com stands e displays VIP</span>
+                </li>
+
+                {/* 4 Super Bônus listados um abaixo do outro com emoji de presente */}
+                <li className="flex gap-3 text-sm sm:text-base">
+                  <span className="text-base select-none shrink-0 leading-tight">🎁</span>
+                  <span><strong>Bônus 1:</strong> Guia de Montagem Perfeita (Passo a passo)</span>
+                </li>
+                <li className="flex gap-3 text-sm sm:text-base">
+                  <span className="text-base select-none shrink-0 leading-tight">🎁</span>
+                  <span><strong>Bônus 2:</strong> Tabela de Precificação Natalina (Automatizada)</span>
+                </li>
+                <li className="flex gap-3 text-sm sm:text-base">
+                  <span className="text-base select-none shrink-0 leading-tight">🎁</span>
+                  <span><strong>Bônus 3:</strong> Guia de Papéis, Gramaturas e Materiais</span>
+                </li>
+                <li className="flex gap-3 text-sm sm:text-base">
+                  <span className="text-base select-none shrink-0 leading-tight">🎁</span>
+                  <span><strong>Bônus 4:</strong> Mini Guia para Vender Muito no Natal</span>
+                </li>
+
+                <li className="flex gap-3 text-sm sm:text-base">
+                  <Check className="h-5 w-5 shrink-0 text-gold" />
+                  <span>Arquivos prontos para imprimir (PDF e PNG A4)</span>
                 </li>
                 <li className="flex gap-3 text-sm sm:text-base">
                   <Check className="h-5 w-5 shrink-0 text-gold" />
-                  <span>Arquivos prontos para imprimir</span>
-                </li>
-                <li className="flex gap-3 text-sm sm:text-base">
-                  <Check className="h-5 w-5 shrink-0 text-gold" />
-                  <span>Acesso imediato ao material</span>
+                  <span>Acesso imediato no e-mail + Licença comercial</span>
                 </li>
               </ul>
 
@@ -1161,11 +1186,13 @@ export default function App() {
                   </tr>
                   <tr className="hover:bg-muted/40 transition">
                     <td className="py-3.5 px-3 sm:px-4 font-semibold text-pine">Os 4 Super Bônus Exclusivos (R$ 158 em presentes)</td>
-                    <td className="py-3.5 px-3 sm:px-4 text-center">
-                      <Check className="h-4 w-4 sm:h-5 sm:w-5 text-success mx-auto" />
+                    <td className="py-3.5 px-3 sm:px-4 text-center text-muted-foreground/60">
+                      <X className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground/50 mx-auto" />
+                      <span className="text-[11px] text-muted-foreground/60 block mt-0.5">Não incluso</span>
                     </td>
                     <td className="py-3.5 px-3 sm:px-4 text-center bg-red-50/50 border-x-2 border-gold/40">
                       <Check className="h-4 w-4 sm:h-5 sm:w-5 text-red-700 mx-auto" />
+                      <span className="text-[11px] font-bold text-red-700 block mt-0.5">Inclusos Grátis</span>
                     </td>
                   </tr>
                   <tr className="hover:bg-muted/40 transition">
